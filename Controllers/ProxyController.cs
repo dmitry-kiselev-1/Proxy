@@ -66,8 +66,10 @@ namespace Proxy.Controllers
             }
 
             // select all elements in the document
-            foreach (var textNode in doc.DocumentNode.SelectNodes("//br" /*TextNodesProvider.Xpath()*/))
+            foreach (var textNode in doc.DocumentNode.SelectNodes(/*"//a|//h1"*/ TextNodesProvider.Xpath()))
             {
+                if(textNode.InnerText.Length == 0) continue;
+
                 var words = textNode.InnerText.Split(' ');
                 var wordsModified = String.Join(" ",
                     words.Select(word => word.Length == 6 ? $"{word}{injection}" : word)
