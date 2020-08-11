@@ -28,6 +28,6 @@ namespace Proxy
             }.Select(i => i + TextXpath));
         }
 
-        private const string TextXpath = "/descendant::text()";
+        private const string TextXpath = "/descendant-or-self::text()";
     }
 }
