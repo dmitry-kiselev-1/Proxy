@@ -9,6 +9,8 @@ namespace Proxy
     {
         internal static string Xpath()
         {
+            return "*//descendant-or-self::text()";
+            /*
             return "//" + string.Join("|//", new List<string>(){
                 "a",
                 "header", "title",
@@ -25,9 +27,8 @@ namespace Proxy
                 "section",
                 "span",
                 "summary"
-            }.Select(i => i + TextXpath));
+            }.Select(i => i + "/descendant-or-self::text()"));
+            */
         }
-
-        private const string TextXpath = "/descendant-or-self::text()";
     }
 }

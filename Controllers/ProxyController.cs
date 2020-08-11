@@ -66,7 +66,7 @@ namespace Proxy.Controllers
             }
 
             // select all elements in the document
-            foreach (var textNode in doc.DocumentNode.SelectNodes(/*"//a|//h1"*/ TextNodesProvider.Xpath()))
+            foreach (var textNode in doc.DocumentNode.SelectNodes(TextNodesProvider.Xpath()))
             {
                 if(textNode.InnerText.Length == 0) continue;
 
