@@ -35,7 +35,7 @@ namespace Proxy.Controllers
             var localDestinationDomain = @"https://localhost:5001/proxy/";
             var publishDestinationDomain = @"https://websiteproxy4.azurewebsites.net/proxy/";
 
-            var destinationDomain = localDestinationDomain;
+            var destinationDomain = publishDestinationDomain;
 
             var destinationPath = base.Request?.Path.Value;
             var destination = sourceDomain[..8] + (sourceDomain[8..] + destinationPath?[6..])
